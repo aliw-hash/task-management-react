@@ -1,4 +1,5 @@
-import UserProfile from "./components/userProfile/userProfile.jsx"
+import UserProfile from "./components/userProfile/userProfile.jsx";
+import LikeButton from "./components/likeButton/likeButton.jsx";
 
 const user = {
   firstName: "john",
