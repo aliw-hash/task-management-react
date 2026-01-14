@@ -22,7 +22,10 @@ export default function Signup() {
           Enter your email below to login to your account
         </CardDescription>
         <CardAction>
-          <Button variant="link">Sign Up</Button>
+          <Button variant="link" asChild>
+      <a href="signup">Sign Up</a>
+    </Button>
+
         </CardAction>
       </CardHeader>
       <CardContent>
@@ -54,9 +57,8 @@ export default function Signup() {
       </CardContent>
       <CardFooter className="flex-col gap-2">
         <Button type="submit" className="w-full">
-          Login
+          Signup
         </Button>
-      
       </CardFooter>
     </Card>
     </section>
