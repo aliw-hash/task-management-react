@@ -1,66 +1,44 @@
-import { Button } from "@/components/ui/button"
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/card";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   return (
-  <>
-    <section>
-      <Card className="w-full max-w-sm">
-      <CardHeader>
-        <CardTitle>Login to your account</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
-        <CardAction>
-          <Button variant="link" asChild>
-      <a href="signup">Sign Up</a>
-    </Button>
-
-        </CardAction>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="flex flex-col gap-6">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
-            </div>
-            <div className="grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
-                <a
-                  href="#"
-                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                >
-                  Forgot your password?
-                </a>
-              </div>
-              <Input id="password" type="password" required />
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full">
-          Signup
-        </Button>
-      </CardFooter>
-    </Card>
+    <section className="flex flex-row max-w-screen-xl min-h-screen w-full justify-center items-center">
+      <div className="w-4/12">
+        <Card>
+          <CardHeader>
+            <CardTitle>Signup</CardTitle>
+            <CardDescription>
+              Create a new account to start creating tasks
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Input className="mb-4" type="text" placeholder="First Name" />
+            <Input className="mb-4" type="text" placeholder="Last Name" />
+            <Input className="mb-4" type="email" placeholder="Email" />
+            <Input className="mb-4" type="password" placeholder="Password" />
+          </CardContent>
+          <CardFooter className="flex flex-row justify-between">
+            <p className="basis-1/2">
+              Already have an account?{" "}
+              <Link className="text-blue-500 hover:text-blue-700" to="/">
+                Login Here
+              </Link>
+            </p>
+            <Button>Signup</Button>
+          </CardFooter>
+        </Card>
+      </div>
     </section>
-  </>);
+  );
 }
