@@ -1,4 +1,5 @@
-import TasksCounter from "@/components/tasksCounter/taskCounter.jsx";
+import TasksCounter from "@/components/tasksCounter/tasksCounter.jsx";
+import FilterBar from "@/components/filterBar/filterBar.jsx"
 
 export default function Tasks() {
   return (
@@ -13,10 +14,11 @@ export default function Tasks() {
             <TasksCounter count={10} type="inProgress"/>
             <TasksCounter count={9} type="completed"/>
           </div>
+          
         </div>
       </section>
       <section className="flex basis-1/3 bg-red-700 justify-center">
-        
+
       </section>
     </section>
   );

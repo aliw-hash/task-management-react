@@ -1,7 +1,9 @@
+import TaskPagination from "../taskPagination/taskPagination";
+
 export default function FilterBar (){
   return (
     <nav className="flex justify-between">
-      <p>pagination</p>
+      <TaskPagination />
       <p>order</p>
     </nav>
   );
