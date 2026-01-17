@@ -1,10 +1,11 @@
-import TaskPagination from "../taskPagination/taskPagination";
+import { TaskPagination } from "../taskPagination/taskPagination.jsx";
+import { OrderSelect } from "../orderSelect/orderSelect.jsx";
 
 export default function FilterBar (){
   return (
-    <nav className="flex justify-between">
+    <nav className="flex justify-between mb-8">
       <TaskPagination />
-      <p>order</p>
+      <OrderSelect />
     </nav>
   );
 }
