@@ -121,7 +121,6 @@ export function CreateTaskForm(){
                     <SelectGroup>
                       <SelectItem value="todo">Todo</SelectItem>
                       <SelectItem value="inProgress">In Progress</SelectItem>
-                      <SelectItem value="completed">Completed</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>

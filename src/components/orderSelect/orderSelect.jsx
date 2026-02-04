@@ -48,6 +48,8 @@ export function OrderSelect() {
     <Select
       value={currentOrder ?? order}
       onValueChange={(value) => setCurrentOrder(value)}
+      disabled = { tasks?.pagination?.meta?.totalItems === 0 }
+      className = { tasks?.pagination?.meta?.totalItems === 0 ? "pointer-events-none opacity-50" : "" }
     >
       <SelectTrigger className="w-[140px]">
         <SelectValue placeholder="Select Order" />
