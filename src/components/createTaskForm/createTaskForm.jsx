@@ -110,7 +110,7 @@ export function CreateTaskForm(){
               <FormItem className="basis-1/2">
                 <Select 
                   onValueChange={field.onChange}
-                  defaultValue = {field.value}
+                  value = {field.value || ""}
                   >
                   <FormControl>
                     <SelectTrigger>
@@ -137,7 +137,7 @@ export function CreateTaskForm(){
               <FormItem className="basis-1/2">
                 <Select 
                   onValueChange= {field.onChange}
-                  defaultValue = {field.value}
+                  value = {field.value || ""}
                 >
                   <FormControl>
                     <SelectTrigger>
@@ -204,9 +204,10 @@ export function CreateTaskForm(){
             <FormItem>
               <FormControl>
               <Textarea 
-                placeholder="Elaborate you title here.." 
+                placeholder="Elaborate title here.." 
                 {...field}             
-                className="min-h-20" />
+                className="min-h-20"
+                value={field.value || ""} />
               </FormControl>
               <FormMessage />
             </FormItem>
