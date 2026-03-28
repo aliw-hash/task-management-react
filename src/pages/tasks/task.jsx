@@ -1,7 +1,7 @@
 import TasksCounter from "@/components/tasksCounter/tasksCounter.jsx";
 import FilterBar from "../../components/filterBar/filterBar.jsx";
 import Task from "@/components/task/task";
-import TaskSidebar from "@/components/taskSidebar/taskSideBar.jsx";
+import TaskSidebar from "@/components/taskSidebar/taskSidebar.jsx";
 import { useFetchTasks } from "@/hook/useFetchTasks.hook.js";
 import { useContext, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton.jsx";
