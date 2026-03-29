@@ -10,6 +10,8 @@ const fetchTasks = async ({ queryKey })=>{
   url.searchParams.append("limit", limit);
   url.searchParams.append("page", page);
 
+  console.log(`URL: ${url}`); //temp
+
   const response = await fetch(url, {
     method: "GET",
     headers: {
