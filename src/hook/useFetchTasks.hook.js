@@ -5,8 +5,8 @@ const fetchTasks = async ({ queryKey })=>{
   const [_key, { order="asc", limit=5, page=1 }] = queryKey;
   const token = Cookies.get("token");
   
-  const base = import.meta.env.VITE_API_URL;
-  const url = `${base}/tasks?order=${order}&limit=${limit}&page=${page}`;
+  const url = new URL(`${import.meta.env.VITE_API_URL}tasks`);
+  console.log("vite URL: ",import.meta.env.VITE_API_URL);
   url.searchParams.append("order", order);
   url.searchParams.append("limit", limit);
   url.searchParams.append("page", page);
