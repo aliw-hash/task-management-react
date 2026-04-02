@@ -26,11 +26,16 @@ import { Spinner } from "@/components/ui/spinner";
 import { useNavigate } from "react-router-dom";
 import { Toaster } from "sonner";
 import { toast } from "sonner";
+import { useLocation } from "react-router-dom";
+import { useRef } from "react";
+
 
 export default function Login() {
   const {mutate, isPending, isError, isSuccess} = useLogin();
   const [login, setLogin] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const hasShown = useRef(false);
 
   const form = useForm({
       resolver: zodResolver(LoginSchema),
@@ -62,6 +67,15 @@ export default function Login() {
         });
       }
     }, [isError]);
+
+    useEffect(() => {
+  if (location.state?.message && !hasShown.current) {
+    toast.error(location.state.message, {
+      position: "top-center",
+    });
+    hasShown.current = true;
+  }
+}, [location.state]);
 
   return (
     <section className="flex flex-row max-w-screen-xl min-h-screen w-full justify-center items-center">
