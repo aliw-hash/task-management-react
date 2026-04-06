@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import Cookies from "js-cookie";
+import { useQueryClient } from "@tanstack/react-query";
 
 const createTask = async (task) => {
   const token = Cookies.get("token");
@@ -19,10 +20,15 @@ const createTask = async (task) => {
 }
 
 export function useCreateTask(){
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: createTask,
     onSuccess: (response)=>{
-      console.log(response);
+      queryClient.invalidateQueries({
+        queryKey: ["fetchTasks"],
+        refetchType: "all",
+      });
     },
     onError: (error) => {
       console.log("Error while creating task", error);

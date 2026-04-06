@@ -51,10 +51,6 @@ export function CreateTaskForm(){
     let dueDate = values.dueDate.toISOString();
     mutate({...values, dueDate});
     form.reset();
-    queryClient.invalidateQueries({
-      queryKey: ["fetchTasks"],
-      refetchType: "all",
-    });
   }
 
   useEffect(()=>{

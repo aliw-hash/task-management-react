@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import { useUpdateTask } from "@/hook/useUpdateTask";
 import { useQueryClient } from "@tanstack/react-query";
 
+
 export default function Task (props){
   const {mutate, isSuccess} = useUpdateTask();
   const [progress, setProgress] = useState(false);
@@ -44,18 +45,10 @@ export default function Task (props){
   function handleProgressStatus(value){
     setProgress(value);
     mutate({ _id: id, status: value? "inProgress" : "todo" });
-    queryClient.invalidateQueries({
-      queryKey: ["fetchTasks"],
-      refetchType: "all",
-    });
   }
 
   function handleTaskCompleted(value){
     mutate({ _id: id, status: "completed" });
-    queryClient.invalidateQueries({
-      queryKey: ["fetchTasks"],
-      refetchType: "all",
-    });
   }
 
   return(
