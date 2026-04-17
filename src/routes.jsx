@@ -4,26 +4,37 @@ import Signup from "./pages/signup/signup.jsx";
 import Tasks from "./pages/tasks/task.jsx";
 import { createBrowserRouter } from "react-router-dom";
 import PrivateRoutes from "./components/privateRoutes/privateRoutes.jsx";
+import GuestRoutes from "./components/guestRoutes/guestRoutes.jsx";
 
 export const router = createBrowserRouter([
+  
+  // ✅ Guest routes (login/signup)
   {
-    element: <PrivateRoutes/>,
+    element: <GuestRoutes />,
     children: [
       {
-        path: "tasks",
-        element: <Tasks/>,
+        path: "/",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
       },
     ],
   },
+
+  // ✅ Protected routes
   {
-    path: "/",
-    element: <Login />,
+    element: <PrivateRoutes />,
+    children: [
+      {
+        path: "tasks",
+        element: <Tasks />,
+      },
+    ],
   },
 
-  {
-    path: "signup",
-    element: <Signup />,
-  },
+  // ❌ 404
   {
     path: "*",
     element: <PageNotFound />,
