@@ -6,7 +6,12 @@ const fetchTasks = async ({ queryKey })=>{
   const token = Cookies.get("token");
   
   console.log("1vite URL: ",import.meta.env.VITE_API_URL);
+  try {
   const url = new URL(`${import.meta.env.VITE_API_URL}tasks`);
+  console.log("URL:", url);
+} catch (err) {
+  console.error("URL ERROR:", err);
+}
   console.log("2vite URL: ",import.meta.env.VITE_API_URL);
   console.log("new URL: ",url);
   url.searchParams.append("order", order);
