@@ -8,6 +8,7 @@ const fetchTasks = async ({ queryKey })=>{
   console.log("vite URL: ",import.meta.env.VITE_API_URL);
   const url = new URL(`${import.meta.env.VITE_API_URL}tasks`);
   console.log("vite URL: ",import.meta.env.VITE_API_URL);
+  console.log("new URL: ",url);
   url.searchParams.append("order", order);
   url.searchParams.append("limit", limit);
   url.searchParams.append("page", page);
