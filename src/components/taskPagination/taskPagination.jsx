@@ -21,7 +21,7 @@ const order = links?.next
   ? extractQueryString(links.next).get("order")
   : links?.previous
     ? extractQueryString(links.previous).get("order")
-    : null;
+    : "asc";
 
   const isLastPage = meta ? meta.currentPage === meta.totalPages : false;
   const isFirstPage = meta ? meta.currentPage === 1 : false;
