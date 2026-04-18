@@ -64,7 +64,7 @@ export default function Tasks() {
                   count={tasks?.pagination?.meta?.totalTodoTasks} 
                   type="todo"/>
                 <TasksCounter 
-                  count={tasks?.pagination?.meta?.            totalInProgressTasks} type="inProgress"/>
+                  count={tasks?.pagination?.meta?.totalInProgressTasks} type="inProgress"/>
                 <TasksCounter
                   count={tasks?.pagination?.meta?.totalCompletedTasks} type="completed"/>
               </div>
